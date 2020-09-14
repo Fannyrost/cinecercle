@@ -8,8 +8,46 @@
     <p>Inscrivez-vous, créez ou rejoignez simplement vos cercles de recommandations</p>
     <p> <strong> Now it's pop corn time !</strong></p>
   </div>
-  <div class="home-banner-form">
-    <%= render "devise/registrations/new" %>
+  <div class="home-banner-form text-center">
+    <div class="m-auto">
+      <h2 class="my-4">Créer un compte</h2>
+
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :pseudo,
+                      required: true,
+                      autofocus: true,
+                      placeholder: "Pseudo",
+                      input_html: { class: 'form-field' },
+                      label:false %>
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email", class: 'form-field' },
+                      placeholder: "Email",
+                      label:false %>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password", class: 'form-field'},
+                      placeholder: "Password",
+                      label:false %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password", class: 'form-field'},
+                      placeholder: "Password confirmation",
+                      label:false %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Valider", class: 'btn-pinky' %>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 
 </div>
