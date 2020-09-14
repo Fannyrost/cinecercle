@@ -1,4 +1,15 @@
+<%= render 'shared/unlogged-navbar' %>
 
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-banner d-flex justify-content-between">
+  <div class="home-banner-content">
+    <h1>Movies from your friends, with love</h1>
+    <p>Ecouter l'avis de ceux qui comptent ! </p>
+    <p>Fini les longues recherches de films, retrouver toutes les recommandations de vos amis !</p>
+    <p>Inscrivez-vous, créez ou rejoignez simplement vos cercles de recommandations</p>
+    <p> <strong> Now it's pop corn time !</strong></p>
+  </div>
+  <div class="home-banner-form">
+    <%= render "devise/registrations/new" %>
+  </div>
 
+</div>
