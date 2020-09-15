@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'circles/index'
+  get 'circles/show'
   devise_for :users
 
   get '/wall', to: 'pages#wall', as: 'wall'

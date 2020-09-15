@@ -30,15 +30,23 @@
   width: 400px;
   height: 400px;
 
+  .form-field {
+    color: $light-gray
+  }
+
   a {
     color: $cream;
     border-bottom: 1px solid $pinky;
     padding: 0px;
+    transition: border-bottom-width 0.2s linear;
 
     &:hover {
       color: $pinky;
-      border-bottom: 1px solid $pinky;
+      border-bottom: 3px solid $pinky;
       padding: 0px;
     }
   }
 }
+
+
+
