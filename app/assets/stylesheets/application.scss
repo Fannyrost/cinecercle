@@ -1,13 +1,58 @@
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
-@import "config/bootstrap_variables";
 
 // External libraries
-@import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// Font
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Poppins:ital,wght@0,100;0,300;0,400;0,600;1,100;1,300;1,400;1,600&display=swap');
+
+// Basics
+
+body {
+  color: $dark-gray;
+  background-color: $light-blue;
+  line-height: normal;
+
+  h1 {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 30px;
+  }
+
+  h2 {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 25px;
+  }
+
+  h3  {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  p {
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 16px;
+  }
+
+}
+
+a {
+  text-decoration: none;
+  color: $dark-gray;
+
+  &:hover {
+    text-decoration: none;
+    color: $pinky;
+  }
+}

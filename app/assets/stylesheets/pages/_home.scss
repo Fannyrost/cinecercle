@@ -1,1 +1,52 @@
 // Specific CSS for your home-page
+
+.home-banner {
+  background-image: url(movie-web.jpg);
+  background-position: center;
+  background-size: fit;
+  width: 100vw;
+  height: 100vh;
+
+  h2 {
+    color: $cream;
+    font-size: 20px;
+  }
+
+
+}
+
+.home-banner-content {
+  color: $cream;
+  margin-top: 200px;
+  margin-left: 100px;
+  width: 400px;
+}
+
+.home-banner-form {
+  background-color: rgba(252, 250, 250, 0.4);
+  border-radius: 30px;
+  margin-top: 120px;
+  margin-right: 100px;
+  width: 400px;
+  height: 400px;
+
+  .form-field {
+    color: $light-gray
+  }
+
+  a {
+    color: $cream;
+    border-bottom: 1px solid $pinky;
+    padding: 0px;
+    transition: border-bottom-width 0.2s linear;
+
+    &:hover {
+      color: $pinky;
+      border-bottom: 3px solid $pinky;
+      padding: 0px;
+    }
+  }
+}
+
+
+

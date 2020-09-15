@@ -1,12 +1,30 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.unlogged-navbar {
+  width: 100%;
+  height: 10%;
+  background: transparent;
+  position: sticky;
+  top: 0;
+  left: 0;
+  color: $cream;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+
+.logged-navbar {
+  width: 100%;
+  height: 10%;
+  background: $cream;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.7);
+  position: sticky;
+  top: 0;
+  left: 0;
+  color: $dark-gray;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+
+.nav-links {
+  width:20%;
+
+  h2 {
+    font-size: 20px;
+  }
 }

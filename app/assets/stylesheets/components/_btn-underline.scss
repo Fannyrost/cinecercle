@@ -1,0 +1,33 @@
+.btn-underline {
+  // border-bottom: 1px solid $pinky;
+  position: relative;
+
+  &:after {
+  content: "";
+  background: $pinky;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  width: 90%;
+  margin-bottom: -3px;
+
+
+  }
+
+  .fas {
+    color: $pinky;
+  }
+
+
+}
+
+
+.btn-underline-hover {
+  transition: transform 1s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+}
