@@ -1,27 +1,11 @@
-<%= render 'shared/unlogged-navbar' %>
+<%= render 'shared/logged-navbar' %>
 
 <div class="container text-center ">
-
   <h1 class="my-5">Tous mes cercles</h1>
-
   <div class="d-flex justify-content-around">
-
     <% @circles.each do |c| %>
-      <%= link_to circles_show_path(c)  do %>
-        <div class="circle-card d-flex flex-column align-items-center">
-          <div><h2><%= c.title %></h2></div>
-          <div><p><em> Créé par <%= c.user.pseudo %></em></p></div>
-          <div>
-            <p><i class="fas fa-users"></i> Nb de pax in</p>
-            <p><i class="fas fa-film"></i> Nb de films</p>
-          </div>
-        </div>
-      <% end %>
+      <%= render 'shared/circle-card', c: c %>
     <% end %>
-
-
   </div>
-
-
 </div>
 
