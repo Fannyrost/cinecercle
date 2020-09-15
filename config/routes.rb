@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/wall', to: 'pages#wall', as: 'wall'
 
-  resources :circles, only: [ :index, :show ] do
+  resources :circles, only: [ :index, :show, :create ] do
     resources :recommendations, only: [ :show ]
     resources :movies, only: [:index, :show]
   end

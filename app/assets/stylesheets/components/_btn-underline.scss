@@ -2,6 +2,7 @@
   // border-bottom: 1px solid $pinky;
   position: relative;
 
+
   &:after {
   content: "";
   background: $pinky;
@@ -9,25 +10,24 @@
   bottom: 0;
   right: 0;
   height: 1px;
-  width: 90%;
+  width: 100%;
   margin-bottom: -3px;
-
-
   }
-
-  .fas {
-    color: $pinky;
-  }
-
-
 }
 
 
 .btn-underline-hover {
   transition: transform 1s;
+  height: 22px;
+  width: 210px;
 
   &:hover {
     transform: scale(1.05);
   }
 
+  .fas {
+    color: $pinky;
+    width: 20px;
+  }
 }
+

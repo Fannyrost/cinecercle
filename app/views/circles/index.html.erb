@@ -2,15 +2,38 @@
 
 <div class="container text-center ">
   <div class="d-flex justify-content-end my-5">
-    <div class="btn-underline-hover">
-      <a class="btn-underline" href="#"><i class="fas fa-plus"></i>  Créer un nouveau cercle</a>
-    </div>
+    <%= render 'shared/btn_underline', path: "#", fontawesome: "fas fa-plus", title: "Créer un nouveau cercle"  %>
   </div>
   <h1 class="my-5">Tous mes cercles</h1>
-  <div class="d-flex justify-content-around">
+  <div class="d-flex justify-content-around flex-wrap">
     <% @circles.each do |c| %>
       <%= render 'shared/circle-card', c: c %>
     <% end %>
+  </div>
+
+
+  <div class="circle-form ">
+    <%= simple_form_for [ @circle] do |f| %>
+    <%= f.input :title,
+                required: true,
+                autofocus: true,
+                placeholder: "Titre du Cercle",
+                input_html: { class: 'form-field' },
+                label:false %>
+    <%= f.input :description,
+                required: true,
+                autofocus: true,
+                input_html: { class: 'form-field' },
+                placeholder: "Description",
+                label:false %>
+    <div class="form-actions">
+      <%= f.button :submit, "Créer", class: 'btn-pinky' %>
+    </div>
+
+  </div>
+    <% end %>
+
+
   </div>
 </div>
 

@@ -3,20 +3,14 @@
 <div class="container text-center my-5">
   <div class="d-flex justify-content-end my-5">
     <div class="d-flex flex-column align-items-start">
-      <div class="btn-underline-hover my-2">
-        <a class="btn-underline " href="#"><i class="fas fa-plus"></i>  Recommander un film</a>
-      </div>
-      <div class="btn-underline-hover my-2">
-        <a class="btn-underline" href="#"><i class="fas fa-user-plus"></i>  Inviter un ami</a>
-      </div>
-      <div class="btn-underline-hover my-2">
-        <a class="btn-underline" href="#"><i class="fas fa-minus"></i>  Quitter le cercle</a>
-      </div>
-
+      <%= render 'shared/btn_underline', path: "#", fontawesome: "fas fa-plus", title: "Recommander un film"  %>
+      <%= render 'shared/btn_underline', path: "#", fontawesome: "fas fa-user-plus", title: "Inviter un ami"  %>
+      <%= render 'shared/btn_underline', path: "#", fontawesome: "fas fa-minus", title: "Quitter le cercle"  %>
     </div>
-
   </div>
-  <h1><%= @circle.title %></h1>
+  <h1 class="my-5"><%= @circle.title %></h1>
+
+
 
 
 
