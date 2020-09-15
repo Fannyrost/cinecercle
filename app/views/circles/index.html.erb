@@ -10,7 +10,7 @@
       <%= link_to circles_show_path(c)  do %>
         <div class="circle-card d-flex flex-column align-items-center">
           <div><h2><%= c.title %></h2></div>
-          <div><p><em><%= c.user.pseudo %></em></p></div>
+          <div><p><em> Créé par <%= c.user.pseudo %></em></p></div>
           <div>
             <p><i class="fas fa-users"></i> Nb de pax in</p>
             <p><i class="fas fa-film"></i> Nb de films</p>
