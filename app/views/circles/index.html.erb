@@ -1,6 +1,11 @@
 <%= render 'shared/logged-navbar' %>
 
 <div class="container text-center ">
+  <div class="d-flex justify-content-end my-5">
+    <div class="btn-underline-hover">
+      <a class="btn-underline" href="#"><i class="fas fa-plus"></i>  Créer un nouveau cercle</a>
+    </div>
+  </div>
   <h1 class="my-5">Tous mes cercles</h1>
   <div class="d-flex justify-content-around">
     <% @circles.each do |c| %>
