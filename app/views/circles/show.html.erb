@@ -1,2 +1,24 @@
-<h1>Circles#show</h1>
-<p>Find me in app/views/circles/show.html.erb</p>
+<%= render 'shared/logged-navbar' %>
+
+<div class="container text-center my-5">
+  <div class="d-flex justify-content-end my-5">
+    <div class="d-flex flex-column align-items-start">
+      <div class="btn-underline-hover my-2">
+        <a class="btn-underline " href="#"><i class="fas fa-plus"></i>  Recommander un film</a>
+      </div>
+      <div class="btn-underline-hover my-2">
+        <a class="btn-underline" href="#"><i class="fas fa-user-plus"></i>  Inviter un ami</a>
+      </div>
+      <div class="btn-underline-hover my-2">
+        <a class="btn-underline" href="#"><i class="fas fa-minus"></i>  Quitter le cercle</a>
+      </div>
+
+    </div>
+
+  </div>
+  <h1><%= @circle.title %></h1>
+
+
+
+</div>
+
