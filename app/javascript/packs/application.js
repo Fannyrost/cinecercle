@@ -27,12 +27,12 @@ require("channels")
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { movieSearch} from '../components/movie_search';
-console.log('je suis dans app.js')
+import { movieShow} from '../components/movie_show';
 document.addEventListener('turbolinks:load', () => {
-  console.log('je suis dans js')
   // Call your functions here, e.g:
   // initSelect2();
   movieSearch();
+  movieShow();
 });
 
 

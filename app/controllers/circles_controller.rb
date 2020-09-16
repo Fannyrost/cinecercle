@@ -1,18 +1,18 @@
 class CirclesController < ApplicationController
+
   def index
-    # @circles = current_user.circles
     @circles = []
     current_user.memberships.each do |membership|
-
       @circles << membership.circle
     end
-
-    # @user = current_user
     @circle = Circle.new
   end
 
   def show
     @circle = Circle.find(params[:id])
+    cookies[:circle] = @circle.id
+
+
   end
 
   def create

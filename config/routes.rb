@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :circles, only: [ :index, :show, :create ] do
     resources :recommendations, only: [ :show ]
-    resources :movies, only: [:index, :show]
+    resources :movies, only: [:index, :new]
   end
 
   root to: 'pages#home'
