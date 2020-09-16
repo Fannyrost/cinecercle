@@ -2,7 +2,11 @@
   <div class="circle-card d-flex flex-column align-items-center mx-4 my-4 d-flex align-items-center">
     <div class="d-flex flex-column justify-content-between h-100 my-2">
       <div class="mt-5"><h2><%= c.title %></h2></div>
-      <div><p><em> Créé par <%= c.user.pseudo %></em></p></div>
+      <% if c.user == current_user %>
+        <div><p><em> Créé par vous </em></p></div>
+      <% else %>
+        <div><p><em> Créé par <%= c.user.pseudo %></em></p></div>
+      <% end %>
       <div class="mb-5">
         <p><i class="fas fa-users"></i> Nb de pax in</p>
         <p><i class="fas fa-film"></i> Nb de films</p>

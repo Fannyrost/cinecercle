@@ -2,6 +2,22 @@
   // border-bottom: 1px solid $pinky;
   position: relative;
 
+  &:after {
+  content: "";
+  background: $pinky;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  width: 100%;
+  margin-bottom: -3px;
+  }
+}
+
+.btn-underline-white {
+  // border-bottom: 1px solid $pinky;
+  position: relative;
+  color: $cream;
 
   &:after {
   content: "";
