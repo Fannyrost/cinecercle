@@ -19,10 +19,24 @@ const movieSearch = () => {
       console.log(data);
 
       data.Search.forEach((result) => {
-        const movie = `<li class="list-inline-item">
-        <img src="${result.Poster}" alt="">
-        <p>${result.Title}</p>
-        </li>`;
+        let poster = null
+        result.Poster === "N/A" ? poster = "images/movie-web.jpg" : poster = result.Poster
+        const movie = `
+<div class="movie-card m-4 d-flex flex-column align-items-center" data-omdbid="">
+  <a href="#"></a>
+  <div class=" movie-img" style="background-image: url('${poster}');">
+    <a href="#"></a>
+    <a href="#">
+    <div class="btn-underline-hover my-2 d-flex justify-content-start" style="margin-left: 185px;">
+      <div><i class="fas fa-plus"></i></div>
+      <div class="btn-underline-white ml-2"><p>Ajouter au cercle</p></div>
+    </div>
+    </a>
+  </div>
+  <div class="movie-card-content p-3">
+    <h2>${result.Title}(${result.Year})</h2>
+  </div>
+</div>`;
         results.insertAdjacentHTML("beforeend", movie);
       });
     });
