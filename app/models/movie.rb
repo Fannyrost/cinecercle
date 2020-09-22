@@ -8,7 +8,7 @@ class Movie < ApplicationRecord
     api_key = "ce8d3236"
     imdbid = imdbid
     url = "http://www.omdbapi.com/?i=#{imdbid}&apikey=#{api_key}"
-    response =JSON.load(url)
+    response = RestClient.get(url)
     movie = JSON.parse(response)
 
     m = Movie.new(

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get 'movies/movie', to: 'movies#movie'
     resources :recommendations, only: [ :show ]
      resources :movies, only: [:index]  do
-      resources :recommendations, only: [ :new ]
+      resources :recommendations, only: [ :new, :create]
     end
   end
 
