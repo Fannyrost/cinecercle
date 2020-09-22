@@ -1,2 +1,18 @@
-<h1>Circles#show</h1>
-<p>Find me in app/views/circles/show.html.erb</p>
+<%= render 'shared/logged-navbar' %>
+
+<div class="personnalized-container text-center my-5">
+  <div class="d-flex justify-content-end my-5">
+    <div class="d-flex flex-column align-items-start">
+      <%= render 'shared/btn_underline', path: circle_movies_path(@circle) , fontawesome: "fas fa-plus", title: "Recommander un film"  %>
+      <%= render 'shared/btn_underline', path: "#", fontawesome: "fas fa-user-plus", title: "Inviter un ami"  %>
+      <%= render 'shared/btn_underline', path: "#", fontawesome: "fas fa-minus", title: "Quitter le cercle"  %>
+    </div>
+  </div>
+  <h1 class="my-5"><%= @circle.title %></h1>
+
+
+
+
+
+</div>
+

@@ -23,12 +23,20 @@ require("channels")
 // ----------------------------------------------------
 
 // External imports
-import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { movieSearch} from '../components/movie_search';
+import { movieShow} from '../components/movie_show';
+import { addReco} from '../components/add_reco';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  movieSearch();
+  movieShow();
 });
+  addReco();
+
+
+

@@ -1,0 +1,14 @@
+<%= render 'shared/logged-navbar' %>
+
+<div class="personnalized-container text-center">
+  <h1 class="my-5">Ajouter un film dans le cercle <%= @circle.title %></h1>
+  <form action="/" id="movie-search" class="my-5" >  <!-- method="get" -->
+    <input type="text" name="query" placeholder="Titre du film" class="searchbar">
+    <button id="input-submit" type= "submit" class="rounded-full btn-pink-home"><i class="fas fa-search"></i></button>
+  </form>
+
+  <div class="movies my-5 d-flex justify-content-around flex-wrap">
+
+  </div>
+
+</div>

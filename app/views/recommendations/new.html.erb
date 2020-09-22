@@ -1,0 +1,36 @@
+<%= render 'shared/logged-navbar' %>
+
+<div class="d-flex justify-content-between reco-show">
+  <div>
+    <img src="<%= @movie.poster %>" class="poster">
+  </div>
+  <div class="flex-grow reco-content" >
+    <div class="btn-underline-hover my-2 d-flex justify-content-start" id="add-reco">
+        <div><i class="fas fa-plus"></i></div>
+        <div class="btn-underline ml-2"><p>Ajouter au cercle</p></div>
+    </div>
+
+    <h1><%= @movie.title %> (<%= @movie.year %>)</h1>
+    <h2>Par <%= @movie.director %></h2>
+    <p>Avec <%= @movie.actors %></p>
+    <h3> Synopsis</h3>
+    <p><%= @movie.plot %></p>
+  </div>
+</div>
+
+
+
+
+<div class="hidden" id="reco-form">
+
+  <%= simple_form_for [@circle, @movie, @recommendation] do |f| %>
+  <img src="<%= @movie.poster %>">
+  <h3><%= @movie.title %></h3>
+
+  <%= f.input :review_content %>
+  <%= f.input :rating %>
+  <%= f.submit "OK" %>
+
+  <% end %>
+
+</div>

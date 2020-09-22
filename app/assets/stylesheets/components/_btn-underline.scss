@@ -9,25 +9,42 @@
   bottom: 0;
   right: 0;
   height: 1px;
-  width: 90%;
+  width: 100%;
   margin-bottom: -3px;
-
-
   }
+}
 
-  .fas {
-    color: $pinky;
+.btn-underline-white {
+  // border-bottom: 1px solid $pinky;
+  position: relative;
+  color: $cream;
+
+  &:after {
+  content: "";
+  background: $pinky;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  width: 100%;
+  margin-bottom: -3px;
   }
-
-
 }
 
 
 .btn-underline-hover {
   transition: transform 1s;
+  height: 22px;
+  width: 210px;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.05);
   }
 
+  .fas {
+    color: $pinky;
+    width: 20px;
+  }
 }
+
