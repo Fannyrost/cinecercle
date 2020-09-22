@@ -35,8 +35,8 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   movieSearch();
   movieShow();
-  addReco();
 });
+  addReco();
 
 
 
