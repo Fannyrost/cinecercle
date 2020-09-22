@@ -1,14 +1,14 @@
 const movieSearch = () => {
+
   const form = document.querySelector('#movie-search');
 
   if (form === undefined)
     return
-
-
   const apiKey = "ce8d3236";
   const results = document.querySelector('.movies')
 
-  form.addEventListener('keyup', event => {
+  form.addEventListener('submit', event => {
+    event.preventDefault();
     results.innerHTML = "";
     const input = document.querySelector('input').value;
 
@@ -28,37 +28,29 @@ const movieSearch = () => {
     <a href="#">
   </div>
   <div class="movie-card-content p-3">
-    <h2>${result.Title}(${result.Year})</h2>
+    <h2>${result.Title} (${result.Year})</h2>
   </div>
 </div>`;
         results.insertAdjacentHTML("beforeend", movie);
 
       });
+
+    const movies = document.querySelectorAll('.movie-card');
+
+        movies.forEach((movie) => {
+          movie.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const circle = document.cookie.split("=")[1];
+            const imbdId = movie.dataset.imdb;
+
+              window.location.href = `/circles/${circle}/movies/movie?imdbid=${imbdId}`;
+            });
+        })
+      })
     });
-  });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-};
-
-
+  };
 
 
 export { movieSearch }
