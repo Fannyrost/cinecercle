@@ -1,11 +1,7 @@
 <%= render 'shared/logged-navbar' %>
 
 <div class="personnalized-container text-center ">
-  <div class="d-flex justify-content-end my-5">
-    <div class="btn-underline-hover my-2 d-flex justify-content-start" id="add-reco">
-        <div><i class="fas fa-plus"></i></div>
-        <div class="btn-underline ml-2"><p>Créer un nouveau cercle</p></div>
-    </div>  </div>
+  <%= render 'shared/btn-modal', fontawesome: "fas fa-plus", title: "Créer un nouveau cercle" %>
   <h1 class="my-5">Tous mes cercles</h1>
   <div class="d-flex justify-content-around flex-wrap">
     <% @circles.each do |c| %>
@@ -14,7 +10,7 @@
   </div>
 
 
-  <div class="circle-form hidden" id="reco-form">
+  <div class="circle-form hidden" id="modal-form">
     <%= simple_form_for [ @circle] do |f| %>
       <%= f.input :title,
                   required: true,
