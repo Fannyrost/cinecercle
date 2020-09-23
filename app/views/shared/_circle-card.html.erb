@@ -8,8 +8,16 @@
         <div><p><em> Créé par <%= c.user.pseudo %></em></p></div>
       <% end %>
       <div class="mb-5">
-        <p><i class="fas fa-users"></i> Nb de pax in</p>
-        <p><i class="fas fa-film"></i> Nb de films</p>
+        <% memberships = Membership.where(circle_id: c.id) %>
+        <% movies_count = 0 %>
+        <% memberships.each do |m| %>
+          <% m.recommendations.each do |reco| %>
+            <% movies_count +=1 %>
+          <% end %>
+        <% end %>
+
+        <p><i class="fas fa-users"></i> <%= memberships.length %> personnes</p>
+        <p><i class="fas fa-film"></i> <%= movies_count %> films recommandés</p>
       </div>
     </div>
   </div>

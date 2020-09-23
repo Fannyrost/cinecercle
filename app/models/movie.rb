@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
+  has_many :recommendations
 
   def self.from_imdbid(imdbid)
     Movie.find_by(imdbid: imdbid) || create_movie_from(imdbid)
