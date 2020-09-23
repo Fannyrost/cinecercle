@@ -10,6 +10,15 @@
   </div>
   <h1 class="my-5"><%= @circle.title %></h1>
 
+  <div class="movies my-5 d-flex justify-content-around flex-wrap">
+    <% @circle.memberships.each do |membership| %>
+      <% membership.recommendations.each do |reco| %>
+        <% movie = reco.movie %>
+        <%= render 'shared/movie-card', reco: reco, movie: movie, membership: membership  %>
+      <% end %>
+    <% end %>
+
+  </div>
 
 
 
