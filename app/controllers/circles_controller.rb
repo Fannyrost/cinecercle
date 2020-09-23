@@ -26,7 +26,7 @@ class CirclesController < ApplicationController
       m.save
       redirect_to circle_path(@circle)
     else
-      redirect_to circles_path ,notice: "Oops, merci de recommencer"
+      redirect_to circles_path, notice: "Oops, merci de recommencer"
     end
   end
 
