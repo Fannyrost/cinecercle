@@ -19,17 +19,17 @@
 
 
 
+<div class="hidden overlay" id="modal-form">
+  <div class="modale">
 
-<div class="hidden" id="modal-form">
+    <%= simple_form_for [@circle, @movie, @recommendation] do |f| %>
+    <img src="<%= @movie.poster %>">
+    <h3><%= @movie.title %></h3>
 
-  <%= simple_form_for [@circle, @movie, @recommendation] do |f| %>
-  <img src="<%= @movie.poster %>">
-  <h3><%= @movie.title %></h3>
+    <%= f.input :review_content %>
+    <%= f.input :rating %>
+    <%= f.submit "OK" %>
 
-  <%= f.input :review_content %>
-  <%= f.input :rating %>
-  <%= f.submit "OK" %>
-
-  <% end %>
-
+    <% end %>
+  </div>
 </div>
