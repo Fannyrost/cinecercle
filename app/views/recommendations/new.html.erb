@@ -5,8 +5,9 @@
     <img src="<%= @movie.poster %>" class="poster">
   </div>
   <div class="flex-grow reco-content" >
-    <%= render 'shared/btn-modal', fontawesome: "fas fa-plus", title: "Ajouter au cercle" %>
-
+    <div class="d-flex justify-content-end my-5">
+      <%= render 'shared/btn-modal', fontawesome: "fas fa-plus", title: "Ajouter au cercle" %>
+    </div>
 
     <h1><%= @movie.title %> (<%= @movie.year %>)</h1>
     <h2>Par <%= @movie.director %></h2>

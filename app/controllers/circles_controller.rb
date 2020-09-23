@@ -11,6 +11,7 @@ class CirclesController < ApplicationController
   def show
     @circle = Circle.find(params[:id])
     cookies[:circle] = @circle.id
+    @membership = Membership.new
 
 
   end
