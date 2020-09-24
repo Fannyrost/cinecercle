@@ -15,9 +15,6 @@
     <p>Avec <%= movie.actors %></p>
     <h3> Synopsis</h3>
     <p><%= movie.plot %></p>
-
-    <p><%= @recommendation.membership.user.pseudo %> </p>
-    <p><%= @recommendation.rating %> </p>
-    <p><%= @recommendation.review_content %> </p>
+    <%= render 'shared/reco-card', reco: @recommendation %>
   </div>
 </div>
