@@ -3,7 +3,7 @@ class CirclesController < ApplicationController
   def index
     @circles = []
     current_user.memberships.each do |membership|
-      @circles << membership.circle
+      @circles << membership.circle if membership.active
     end
     @circle = Circle.new
   end

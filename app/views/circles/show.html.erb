@@ -8,9 +8,14 @@
       <%= render 'shared/arrow-back'%>
     </div>
     <div class="d-flex flex-column align-items-start">
-      <%= render 'shared/btn_underline', path: circle_movies_path(@circle) , fontawesome: "fas fa-plus", title: "Recommander un film"  %>
+      <%= render 'shared/btn_underline', path: circle_movies_path(@circle) , fontawesome: "fas fa-plus", title: "Recommander un film" %>
       <%= render 'shared/btn-modal', fontawesome: "fas fa-user-plus", title: "Inviter un ami"  %>
-      <%= render 'shared/btn_underline', path: "#", fontawesome: "fas fa-minus", title: "Quitter le cercle"  %>
+      <%= link_to circle_deactivate_membership_path(@circle), method: :patch do   %>
+        <div class="btn-underline-hover my-2 d-flex justify-content-start ">
+            <div><i class="fas fa-minus"></i></div>
+            <div class="btn-underline ml-2"><p>Quitter le cercle</p></div>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="borderbottom my-5">
