@@ -7,11 +7,14 @@ class RecommendationsController < ApplicationController
     @movie = Movie.find(params[:movie_id])
     @circle = Circle.find(params[:circle_id])
     @user = current_user
-    @recommendation = Recommendation.new
+    if Membership.find_by(user_id: @user.id, circle_id: @circle.id, active: true)
+      @recommendation = Recommendation.new
+    else
+      redirect_to circle_path(@circle), notice: "You don't belong to the circle"
+    end
   end
 
   def create
-    # raise
     @user = current_user
     @movie = Movie.find(params[:movie_id])
     @circle = Circle.find(params[:circle_id])
