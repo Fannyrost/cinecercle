@@ -1,0 +1,9 @@
+.arrow-back {
+  color: $pinky;
+  font-size: 30px;
+  cursor: pointer;
+
+  &:hover {
+    color: rgba(227, 59, 87, 0.85);
+  }
+}
