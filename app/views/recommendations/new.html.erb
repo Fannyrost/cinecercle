@@ -5,9 +5,8 @@
     <img src="<%= @movie.poster %>" class="poster">
   </div>
   <div class="flex-grow reco-content" >
-    <div class="btn-underline-hover my-2 d-flex justify-content-start" id="add-reco">
-        <div><i class="fas fa-plus"></i></div>
-        <div class="btn-underline ml-2"><p>Ajouter au cercle</p></div>
+    <div class="d-flex justify-content-end my-5">
+      <%= render 'shared/btn-modal', fontawesome: "fas fa-plus", title: "Ajouter au cercle" %>
     </div>
 
     <h1><%= @movie.title %> (<%= @movie.year %>)</h1>
@@ -20,17 +19,17 @@
 
 
 
+<div class="hidden overlay" id="modal-form">
+  <div class="modale">
 
-<div class="hidden" id="reco-form">
+    <%= simple_form_for [@circle, @movie, @recommendation] do |f| %>
+    <img src="<%= @movie.poster %>">
+    <h3><%= @movie.title %></h3>
 
-  <%= simple_form_for [@circle, @movie, @recommendation] do |f| %>
-  <img src="<%= @movie.poster %>">
-  <h3><%= @movie.title %></h3>
+    <%= f.input :review_content %>
+    <%= f.input :rating %>
+    <%= f.submit "OK" %>
 
-  <%= f.input :review_content %>
-  <%= f.input :rating %>
-  <%= f.submit "OK" %>
-
-  <% end %>
-
+    <% end %>
+  </div>
 </div>

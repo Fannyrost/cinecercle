@@ -1,15 +1,27 @@
 <%= render 'shared/logged-navbar' %>
 
 <div class="personnalized-container text-center my-5">
-  <div class="d-flex justify-content-end my-5">
+
+
+  <div class="d-flex justify-content-between my-5">
     <div class="d-flex flex-column align-items-start">
-      <%= render 'shared/btn_underline', path: circle_movies_path(@circle) , fontawesome: "fas fa-plus", title: "Recommander un film"  %>
-      <%= render 'shared/btn_underline', path: "#", fontawesome: "fas fa-user-plus", title: "Inviter un ami"  %>
-      <%= render 'shared/btn_underline', path: "#", fontawesome: "fas fa-minus", title: "Quitter le cercle"  %>
+      <%= render 'shared/arrow-back'%>
+    </div>
+    <div class="d-flex flex-column align-items-start">
+      <%= render 'shared/btn_underline', path: circle_movies_path(@circle) , fontawesome: "fas fa-plus", title: "Recommander un film" %>
+      <%= render 'shared/btn-modal', fontawesome: "fas fa-user-plus", title: "Inviter un ami"  %>
+      <%= link_to circle_deactivate_membership_path(@circle), method: :patch do   %>
+        <div class="btn-underline-hover my-2 d-flex justify-content-start ">
+            <div><i class="fas fa-minus"></i></div>
+            <div class="btn-underline ml-2"><p>Quitter le cercle</p></div>
+        </div>
+      <% end %>
     </div>
   </div>
-  <h1 class="my-5"><%= @circle.title %></h1>
-
+  <div class="borderbottom my-5">
+    <h1 class="p-2"><%= @circle.title %></h1>
+    <p class="p-2"><%= @circle.description %></p>
+  </div>
   <div class="movies my-5 d-flex justify-content-around flex-wrap">
     <% @circle.memberships.each do |membership| %>
       <% membership.recommendations.each do |reco| %>
@@ -21,6 +33,16 @@
   </div>
 
 
+  <div class="hidden overlay" id="modal-form">
+    <div class="modale">
+      <%= simple_form_for [@circle, @membership] do |f| %>
+
+      <%= f.association :user, label_method: :pseudo, value_method: :id, include_blank: false, label: "Sélectionnez l'utilisateur", class: 'form-field' %>
+      <%= f.submit "OK", class: 'btn-pinky' %>
+
+      <% end %>
+    </div>
+  </div>
 
 
 </div>

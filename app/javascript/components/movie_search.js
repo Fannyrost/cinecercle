@@ -19,7 +19,7 @@ const movieSearch = () => {
 
       data.Search.forEach((result) => {
         let poster = null
-        result.Poster === "N/A" ? poster = "images/movie-web.jpg" : poster = result.Poster
+        result.Poster === "N/A" ? poster = "../../assets/images/movie-web.jpg" : poster = result.Poster
         const movie = `
 <div class="movie-card m-4 d-flex flex-column align-items-center" data-imdb="${result.imdbID}">
   <a href="#"></a>
@@ -27,7 +27,7 @@ const movieSearch = () => {
     <a href="#"></a>
     <a href="#">
   </div>
-  <div class="movie-card-content p-3">
+  <div class="movie-card-content">
     <h2>${result.Title} (${result.Year})</h2>
   </div>
 </div>`;

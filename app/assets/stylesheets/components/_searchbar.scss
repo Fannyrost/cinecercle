@@ -1,6 +1,6 @@
 .searchbar {
   background-color: $cream;
-  color: $light-gray;
+  color: $dark-gray;
   font-weight: light;
   font-size: 20px;
   border-radius: 30px;
@@ -10,3 +10,33 @@
   padding-left: 20px;
   box-shadow:  inset 2px 2px 3px rgba(0,0,0,0.25);
 }
+
+
+.search-button {
+
+  background-color: #E33B57;
+  color: #FCFAFA;
+  width: 70px;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 25px;
+  position: relative;
+  left: -74px;
+  top: 2px;
+
+    &:hover{
+      background-color: rgba(227, 59, 87, 0.85);
+      color: $cream;
+    }
+
+
+
+}
+
+  // .btn-pinky-no-hover {
+  //   background-color: $pinky;
+  //   color: $cream;
+  //   padding: 5px 15px;
+  //   border-radius: 30px;
+
+  // }

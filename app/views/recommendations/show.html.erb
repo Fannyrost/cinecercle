@@ -1,5 +1,10 @@
 <%= render 'shared/logged-navbar' %>
 <% movie = @recommendation.movie %>
+<div class="personnalized-container d-flex justify-content-start mt-4 mb-1">
+  <div class="d-flex flex-column align-items-start">
+    <%= render 'shared/arrow-back'%>
+  </div>
+</div>
 <div class="d-flex justify-content-between reco-show">
   <div>
     <img src="<%= movie.poster %>" class="poster">
@@ -15,9 +20,6 @@
     <p>Avec <%= movie.actors %></p>
     <h3> Synopsis</h3>
     <p><%= movie.plot %></p>
-
-    <p><%= @recommendation.membership.user.pseudo %> </p>
-    <p><%= @recommendation.rating %> </p>
-    <p><%= @recommendation.review_content %> </p>
+    <%= render 'shared/reco-card', reco: @recommendation %>
   </div>
 </div>

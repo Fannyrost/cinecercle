@@ -3,7 +3,7 @@ class CirclesController < ApplicationController
   def index
     @circles = []
     current_user.memberships.each do |membership|
-      @circles << membership.circle
+      @circles << membership.circle if membership.active
     end
     @circle = Circle.new
   end
@@ -11,6 +11,7 @@ class CirclesController < ApplicationController
   def show
     @circle = Circle.find(params[:id])
     cookies[:circle] = @circle.id
+    @membership = Membership.new
 
 
   end
@@ -26,7 +27,7 @@ class CirclesController < ApplicationController
       m.save
       redirect_to circle_path(@circle)
     else
-      redirect_to circles_path ,notice: "Oops, merci de recommencer"
+      redirect_to circles_path, notice: "Oops, merci de recommencer"
     end
   end
 
