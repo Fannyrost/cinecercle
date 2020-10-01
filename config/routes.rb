@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     patch 'memberships/quit', to: 'memberships#deactivate', as: 'deactivate_membership'
     resources :recommendations, only: [ :show ] do
       resources :watchlists, only: [:create]
+      resources :reviews, only: [:create]
     end
      resources :movies, only: [:index]  do
       resources :recommendations, only: [ :new, :create]

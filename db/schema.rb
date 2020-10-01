@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_01_160335) do
+ActiveRecord::Schema.define(version: 2020_10_01_201642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,17 @@ ActiveRecord::Schema.define(version: 2020_10_01_160335) do
     t.index ["movie_id"], name: "index_recommendations_on_movie_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "membership_id", null: false
+    t.bigint "recommendation_id", null: false
+    t.integer "rating"
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["membership_id"], name: "index_reviews_on_membership_id"
+    t.index ["recommendation_id"], name: "index_reviews_on_recommendation_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -76,6 +87,7 @@ ActiveRecord::Schema.define(version: 2020_10_01_160335) do
     t.bigint "recommendation_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "seen", default: false
     t.index ["recommendation_id"], name: "index_watchlists_on_recommendation_id"
     t.index ["user_id"], name: "index_watchlists_on_user_id"
   end
@@ -85,6 +97,8 @@ ActiveRecord::Schema.define(version: 2020_10_01_160335) do
   add_foreign_key "memberships", "users"
   add_foreign_key "recommendations", "memberships"
   add_foreign_key "recommendations", "movies"
+  add_foreign_key "reviews", "memberships"
+  add_foreign_key "reviews", "recommendations"
   add_foreign_key "watchlists", "recommendations"
   add_foreign_key "watchlists", "users"
 end
