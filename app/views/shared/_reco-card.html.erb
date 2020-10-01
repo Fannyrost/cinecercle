@@ -1,6 +1,6 @@
  <div class="reco-card mt-5">
 
-  <h3>Recommended by <%= reco.membership.user.pseudo %></h3>
+  <h3>Recommended by <%= reco.membership.user.pseudo.capitalize %></h3>
   <%= render 'shared/stars', reco: reco %>
   <p>"<%= reco.review_content %>"</p>
 

@@ -21,15 +21,18 @@
 
 <div class="hidden overlay" id="modal-form">
   <div class="modale">
-
     <%= simple_form_for [@circle, @movie, @recommendation] do |f| %>
-    <img src="<%= @movie.poster %>">
-    <h3><%= @movie.title %></h3>
-
-    <%= f.input :review_content %>
-    <%= f.input :rating %>
-    <%= f.submit "OK" %>
-
-    <% end %>
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <img src="<%= @movie.poster %>">
+      </div>
+      <div id="form-review">
+        <h2><%= @movie.title %></h2>
+        <%= f.input :rating, as: :radio_buttons, collection: ['1', '2', '3', '4', '5'], label: 'Note', class: 'form-field' %>
+        <%= f.input :review_content, as: :text, label: 'Commentaires, Avis ...', class: 'form-field' %>
+        <%= f.submit "OK", class: 'btn-pinky' %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
