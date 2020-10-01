@@ -26,4 +26,12 @@ class Movie < ApplicationRecord
     m
   end
 
+  def already_recommended?(circle_id)
+    results = []
+    self.recommendations.each do |reco|
+      reco.membership.circle_id == circle_id ? results << true : results << false
+    end
+    results.include?(true)
+  end
+
 end

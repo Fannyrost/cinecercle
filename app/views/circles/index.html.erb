@@ -1,16 +1,16 @@
-<%= render 'shared/logged-navbar' %>
-
 <div class="personnalized-container text-center ">
 
-  <div class="d-flex justify-content-between my-5">
-    <div class="d-flex align-items-start flex-grow">
-      <%= render_breadcrumbs %>
+  <div>
+    <div class="d-flex justify-content-between my-5">
+      <div class="d-flex align-items-start flex-grow">
+        <%= render_breadcrumbs %>
+      </div>
+      <div>
+        <%= render 'shared/btn-modal', fontawesome: "fas fa-plus", title: "Créer un nouveau cercle" %>
+      </div>
     </div>
-    <div>
-      <%= render 'shared/btn-modal', fontawesome: "fas fa-plus", title: "Créer un nouveau cercle" %>
-    </div>
+    <h1 class="my-5">Tous mes cercles</h1>
   </div>
-  <h1 class="my-5">Tous mes cercles</h1>
   <div class="d-flex justify-content-around flex-wrap">
     <% @circles.each do |c| %>
       <%= render 'shared/circle-card', c: c %>
@@ -18,25 +18,26 @@
   </div>
 
 
-  <div class="circle-form hidden" id="modal-form">
-    <%= simple_form_for [ @circle] do |f| %>
-      <%= f.input :title,
-                  required: true,
-                  autofocus: true,
-                  placeholder: "Titre du Cercle",
-                  input_html: { class: 'form-field' },
-                  label:false %>
-      <%= f.input :description,
-                  required: true,
-                  autofocus: true,
-                  input_html: { class: 'form-field' },
-                  placeholder: "Description",
-                  label:false %>
-      <div class="form-actions">
-        <%= f.button :submit, "Créer", class: 'btn-pinky' %>
-      </div>
-    <% end %>
-
+  <div class="circle-form hidden overlay" id="modal-form">
+    <div class="modale">
+      <%= simple_form_for [ @circle] do |f| %>
+        <%= f.input :title,
+                    required: true,
+                    autofocus: true,
+                    placeholder: "Titre du Cercle",
+                    input_html: { class: 'form-field' },
+                    label:false %>
+        <%= f.input :description,
+                    required: true,
+                    autofocus: true,
+                    input_html: { class: 'form-field' },
+                    placeholder: "Description",
+                    label:false %>
+        <div class="form-actions">
+          <%= f.button :submit, "Créer", class: 'btn-pinky' %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
 

@@ -6,4 +6,10 @@ class User < ApplicationRecord
   has_many :circles
   has_many :memberships
   has_many :circles, through: :memberships
+
+  def reco_count
+    reco_count = 0
+    self.memberships.each { |m| reco_count +=1 }
+    reco_count
+  end
 end

@@ -1,5 +1,4 @@
 class CirclesController < ApplicationController
-
   add_breadcrumb "Accueil ", :root_path
   add_breadcrumb " Mes cercles ", :circles_path
   # add_breadcrumb "Circles", :circles_path
@@ -18,8 +17,6 @@ class CirclesController < ApplicationController
     add_breadcrumb "Cercle \" #{@circle.title} \"", :circle_path
     cookies[:circle] = @circle.id
     @membership = Membership.new
-
-
   end
 
   def create

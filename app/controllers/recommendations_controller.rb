@@ -4,10 +4,9 @@ class RecommendationsController < ApplicationController
 
   def show
     @circle = Circle.find(params[:circle_id])
-    add_breadcrumb "Cercle \" #{@circle.title} \"", :circle_path
+    add_breadcrumb "Cercle \" #{@circle.title} \"", circle_path(id: @circle.id)
     @recommendation = Recommendation.find(params[:id])
-    add_breadcrumb "#{@recommendation.movie.title}", :circle_path
-
+    add_breadcrumb "#{@recommendation.movie.title}", :circle_recommendation_path
   end
 
   def new

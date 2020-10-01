@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'users/show'
   devise_for :users
 
   get '/wall', to: 'pages#wall', as: 'wall'
-
+  resources :users, only: [:show]
   resources :circles, only: [ :index, :show, :create ] do
 
     post 'movies/movie', to: 'movies#movie'
