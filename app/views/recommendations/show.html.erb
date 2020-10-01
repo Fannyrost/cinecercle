@@ -31,6 +31,14 @@
 </div>
 
 <div>
+  <h2>Autres commentaires</h2>
+  <div class="d-flex justify-content-between">
+    <div><p><%= @recommendation.reviews.count %> personnes ont vu et noté ce film</p></div>
+    <div>
+      <%# average_rating(@recommendation.reviews) %>
+    </div>
+
+  </div>
   <% @recommendation.reviews.each do |review| %>
     <%= render 'shared/review-card', review: review %>
   <% end %>
