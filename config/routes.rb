@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     get 'movies/movie', to: 'movies#movie'
     resources :memberships, only: [:create]
     patch 'memberships/quit', to: 'memberships#deactivate', as: 'deactivate_membership'
-    resources :recommendations, only: [ :show ]
+    resources :recommendations, only: [ :show ] do
+      resources :watchlists, only: [:create]
+    end
      resources :movies, only: [:index]  do
       resources :recommendations, only: [ :new, :create]
     end

@@ -2,7 +2,7 @@
   <div>
     <div class="d-flex justify-content-end my-5">
       <div>
-        <%= render 'shared/btn-underline', fontawesome: "fas fa-user-edit", title: "Editer mon profil", path: edit_user_registration(@user) %>
+        <%= render 'shared/btn_underline', fontawesome: "fas fa-user-edit", title: "Editer mon profil", path: edit_user_registration_path(@user) %>
       </div>
     </div>
   <h1 class="p-2 my-5">Hello <%= @user.pseudo.capitalize%> ! </h1>
@@ -12,6 +12,8 @@
     <div><p><i class="fas fa-film pink-font"></i> <%= @user.reco_count %> films recommandés</p></div>
 
   </div>
+  <h2>Ma Watchlist</h2>
+  <%= render 'shared/watchlist', user: @user  %>
 
 
 </div>

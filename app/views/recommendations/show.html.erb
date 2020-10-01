@@ -9,10 +9,16 @@
     <img src="<%= movie.poster %>" class="poster">
   </div>
   <div class="flex-grow reco-content" >
-<!--     <div class="btn-underline-hover my-2 d-flex justify-content-start" id="add-reco">
+    <div class="btn-underline-hover my-2 d-flex justify-content-start" id="add-reco">
         <div><i class="fas fa-plus"></i></div>
         <div class="btn-underline ml-2"><p>Ajouter au cercle</p></div>
-    </div> -->
+    </div>
+    <%= link_to circle_recommendation_watchlists_path(@circle, @recommendation), method: :post do  %>
+    <div class="btn-underline-hover my-2 d-flex justify-content-start ">
+        <div><i class="fas fa-eye"></i></div>
+        <div class="btn-underline ml-2"><p>Ajouter à ma watchlist</p></div>
+    </div>
+    <% end %>
 
     <h1><%= movie.title %> (<%= movie.year %>)</h1>
     <h2>Par <%= movie.director %></h2>

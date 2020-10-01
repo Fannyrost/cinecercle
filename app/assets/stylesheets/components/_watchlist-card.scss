@@ -1,0 +1,25 @@
+.watchlist-card {
+  height: 150px;
+  width: 70%;
+  background-color: $cream;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.7);
+  border-radius: 30px;
+  transition: transform 1s;
+
+  img {
+    height: 100%;
+    margin: 0;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+
+  }
+
+  .watchlist-content {
+    margin: 0 !important;
+  }
+
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
