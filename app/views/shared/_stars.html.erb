@@ -2,10 +2,10 @@
   <% if reco.rating != nil %>
     <% n = reco.rating.truncate() %>
     <% n.times do %>
-      <div><p><span  class="stars"><i class="fas fa-star"></i></span></p></div>
+      <div><p><span  class="pink-font"><i class="fas fa-star"></i></span></p></div>
     <% end %>
     <% (5-n).times do %>
-      <div><p><span  class="stars"><i class="far fa-star"></i></span></p></div>
+      <div><p><span  class="pink-font"><i class="far fa-star"></i></span></p></div>
     <% end %>
   <% end %>
 </div>

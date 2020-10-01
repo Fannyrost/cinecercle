@@ -1,6 +1,10 @@
 class CirclesController < ApplicationController
+  add_breadcrumb "Accueil ", :root_path
+  add_breadcrumb " Mes cercles ", :circles_path
+  # add_breadcrumb "Circles", :circles_path
 
   def index
+    # add_breadcrumb "Mes cercles", :circles_path
     @circles = []
     current_user.memberships.each do |membership|
       @circles << membership.circle if membership.active
@@ -10,10 +14,9 @@ class CirclesController < ApplicationController
 
   def show
     @circle = Circle.find(params[:id])
+    add_breadcrumb "Cercle \" #{@circle.title} \"", :circle_path
     cookies[:circle] = @circle.id
     @membership = Membership.new
-
-
   end
 
   def create

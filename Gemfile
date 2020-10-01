@@ -24,6 +24,7 @@ gem 'redis', '~> 4.0'
 gem 'json'
 gem 'open-uri'
 gem 'rest-client'
+gem 'breadcrumbs_on_rails', '~> 4.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

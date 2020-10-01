@@ -1,23 +1,33 @@
 class RecommendationsController < ApplicationController
+  add_breadcrumb "Accueil ", :root_path
+  add_breadcrumb " Mes cercles ", :circles_path
+
   def show
+    @circle         = Circle.find(params[:circle_id])
     @recommendation = Recommendation.find(params[:id])
+    @review         = Review.new
+    add_breadcrumb "Cercle \" #{@circle.title} \"", circle_path(id: @circle.id)
+    add_breadcrumb "#{@recommendation.movie.title}", :circle_recommendation_path
   end
 
   def new
-    @movie = Movie.find(params[:movie_id])
+    @movie  = Movie.find(params[:movie_id])
     @circle = Circle.find(params[:circle_id])
-    @user = current_user
-    @recommendation = Recommendation.new
+    @user   = current_user
+    if Membership.find_by(user_id: @user.id, circle_id: @circle.id, active: true)
+      @recommendation = Recommendation.new
+    else
+      redirect_to circle_path(@circle), notice: "You don't belong to the circle"
+    end
   end
 
   def create
-    # raise
-    @user = current_user
-    @movie = Movie.find(params[:movie_id])
-    @circle = Circle.find(params[:circle_id])
-    @membership = Membership.find_by(user_id: @user.id, circle_id: @circle.id)
-    @recommendation = Recommendation.new(recommendations_params)
-    @recommendation.movie = @movie
+    @user                      = current_user
+    @movie                     = Movie.find(params[:movie_id])
+    @circle                    = Circle.find(params[:circle_id])
+    @membership                = Membership.find_by(user_id: @user.id, circle_id: @circle.id)
+    @recommendation            = Recommendation.new(recommendations_params)
+    @recommendation.movie      = @movie
     @recommendation.membership = @membership
 
     if @recommendation.save
