@@ -16,7 +16,11 @@
   </div>
 
   <div class="d-flex flex-column align-items-center justify-content-center tab-content reco-tab">
-    <p>Reco!</p>
+    <% user.memberships.each do |membership| %>
+      <% membership.recommendations.each do |reco| %>
+        <%= render 'shared/recommendations-card', membership: membership, reco: reco, movie: reco.movie  %>
+      <% end %>
+   <% end %>
   </div>
 
   <div class="d-flex flex-column align-items-center justify-content-center tab-content movies-seen-tab">
