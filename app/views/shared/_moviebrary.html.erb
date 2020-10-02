@@ -1,0 +1,18 @@
+<h2 class="my-4">Moviebrary</h2>
+<div class="moviebrary ">
+  <div class="tabs d-flex justify-content-start align-items-end">
+    <div class="tab watchlist-tab" id="active">
+      <a href="#">Watchlist</a>
+    </div>
+    <div class="tab reco-tab">
+      <a href="#">Recommandations</a>
+    </div>
+    <div class="tab movies-seen-tab">
+      <a href="#">Films vus</a>
+    </div>
+  </div>
+
+  <div>
+    <%= render 'shared/watchlist', user: @user %>
+  </div>
+</div>

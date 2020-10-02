@@ -1,0 +1,28 @@
+.tab {
+  background-color: rgba(227, 59, 87, 0.75);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  width: 33%;
+  padding: 10px 8px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+
+  a {
+    color: $cream;
+    &:hover {
+      color: $cream;
+    }
+  }
+
+  &:hover  {
+    background-color: $pinky;
+
+  }
+
+
+}
+
+  #active{
+    background-color: $pinky;
+  }

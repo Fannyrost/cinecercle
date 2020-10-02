@@ -1,3 +1,6 @@
-<% user.watchlists.each do |watchlist| %>
-  <%= render 'shared/watchlist-card', movie: watchlist.recommendation.movie, reco: watchlist.recommendation  %>
-<% end %>
+<div>
+ <% user.watchlists.each do |watchlist| %>
+   <%= render 'shared/watchlist-card', movie: watchlist.recommendation.movie, reco: watchlist.recommendation  %>
+ <% end %>
+</div>
+
