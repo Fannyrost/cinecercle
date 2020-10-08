@@ -38,17 +38,45 @@
 
   a {
     color: $cream;
-    border-bottom: 1px solid $pinky;
-    padding: 0px;
-    transition: border-bottom-width 0.2s linear;
 
-    &:hover {
-      color: $pinky;
-      border-bottom: 3px solid $pinky;
-      padding: 0px;
+    p{
+      margin: 0 !important;
     }
+  //   border-bottom: 1px solid $pinky;
+  //   padding: 0px;
+  //   transition: border-bottom-width 0.2s linear;
+
+  //   &:hover {
+  //     color: $pinky;
+  //     border-bottom: 3px solid $pinky;
+  //     padding: 0px;
+  //   }
   }
 }
 
 
+@media only screen and (min-device-width : 321px) and (max-device-width : 480px) {
+  .home-banner {
+    flex-direction: column;
+    // height: 80vh;
+  }
+
+  .home-banner-content {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 4.5rem;
+
+    width: 90%;
+  }
+
+  .home-banner-form {
+    margin: 20px auto;
+    width: 90%;
+    height: 380px;
+
+    h2{
+      margin-top: 0.5rem !important;
+    }
+  }
+}
 

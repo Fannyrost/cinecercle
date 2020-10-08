@@ -1,7 +1,8 @@
-<div class="d-flex justify-content-between m-4 p-0" style="height:23px;">
+<div class="p-0 text-center d-flex flex-column justify-content-start align-items-center" >
 
   <%- if controller_name != 'sessions' %>
-    <%= link_to "J'ai déjà un compte", new_session_path(resource_name) %><br />
+  <%= render 'shared/btn_underline', path: new_session_path(resource_name), fontawesome: "fas fa-user-check", title: "J'ai déjà un compte" %>
+    <%#= link_to "J'ai déjà un compte", new_session_path(resource_name) %><br />
   <% end %>
 
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
@@ -9,7 +10,8 @@
   <% end %>
 
   <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-    <%= link_to "Mot de passe oublié ?", new_password_path(resource_name) %><br />
+    <%= render 'shared/btn_underline', path: new_password_path(resource_name), fontawesome: "fas fa-key", title: "Mot de passe oublié ?" %>
+    <%#= link_to "Mot de passe oublié ?", new_password_path(resource_name) %><br />
   <% end %>
 
   <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>

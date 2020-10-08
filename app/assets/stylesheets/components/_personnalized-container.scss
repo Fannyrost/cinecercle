@@ -2,3 +2,11 @@
   width: 90%;
   margin: 0 auto;
 }
+
+
+@media only screen and (min-device-width : 321px) and (max-device-width : 480px) {
+  .personnalized-container {
+    width: 95%;
+    margin: 0 auto;
+  }
+}

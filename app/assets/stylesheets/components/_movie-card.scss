@@ -43,3 +43,33 @@
 
 
 }
+
+
+@media only screen and (min-device-width : 321px) and (max-device-width : 480px) {
+  .movie-card {
+    width: 250px;
+    height: 450px;
+
+  }
+
+  .movie-img {
+    width: 250px;
+    height: 360px;
+
+  }
+
+  .movie-card-content {
+    position: relative;
+    top: 350px;
+    height: 80px;
+    padding: 1rem;
+
+    h2 {
+      font-size: 18px
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+}

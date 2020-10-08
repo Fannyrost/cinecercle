@@ -47,3 +47,13 @@
     font-size: 20px;
   }
 }
+
+
+
+@media only screen and (min-device-width : 321px) and (max-device-width : 480px) {
+  .unlogged-navbar {
+
+  border-bottom: 1px solid $pinky;
+
+  }
+}
