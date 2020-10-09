@@ -21,6 +21,11 @@
                       placeholder: "Pseudo",
                       input_html: { class: 'form-field' },
                       label:false %>
+          <%= f.input :photo,
+                      as: :file,
+                      input_html: { class: 'form-field' },
+                      label: "Ajouter une photo de profil",
+                      label_html: { class: 'cream-font' } %>
           <%= f.input :email,
                       required: true,
                       autofocus: true,
@@ -45,8 +50,8 @@
         </div>
       <% end %>
 
-      <%= render "devise/shared/links" %>
     </div>
+      <%= render "devise/shared/links" %>
   </div>
 
 </div>

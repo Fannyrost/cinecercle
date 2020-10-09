@@ -29,8 +29,8 @@
   border-radius: 30px;
   margin-top: 120px;
   margin-right: 100px;
-  width: 400px;
-  height: 400px;
+  width: 460px;
+  height: 460px;
 
   .form-field {
     color: $dark-gray
@@ -42,15 +42,10 @@
     p{
       margin: 0 !important;
     }
-  //   border-bottom: 1px solid $pinky;
-  //   padding: 0px;
-  //   transition: border-bottom-width 0.2s linear;
+  }
 
-  //   &:hover {
-  //     color: $pinky;
-  //     border-bottom: 3px solid $pinky;
-  //     padding: 0px;
-  //   }
+  .devise-links {
+    margin: auto 30px;
   }
 }
 
@@ -59,6 +54,7 @@
   .home-banner {
     flex-direction: column;
     // height: 80vh;
+    height: auto;
   }
 
   .home-banner-content {
@@ -72,11 +68,15 @@
   .home-banner-form {
     margin: 20px auto;
     width: 90%;
-    height: 380px;
+    height: auto;
 
     h2{
       margin-top: 0.5rem !important;
     }
+  }
+
+  .devise-links {
+    flex-direction: column;
   }
 }
 

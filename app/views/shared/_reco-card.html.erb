@@ -1,7 +1,14 @@
  <div class="reco-card mt-5">
 
-  <h3>Recommended by <%= reco.membership.user.pseudo.capitalize %></h3>
-  <%= render 'shared/stars', reco: reco %>
+  <div class="d-flex justify-content-start align-items-center">
+    <div>
+      <%= cl_image_tag reco.membership.user.profile_picture, height: 40, width: 40, crop: :fill %>
+    </div>
+    <div>
+      <h3>Recommended by <%= reco.membership.user.pseudo.capitalize %></h3>
+      <%= render 'shared/stars', reco: reco %>
+    </div>
+  </div>
   <p>"<%= reco.review_content %>"</p>
 
  </div>
