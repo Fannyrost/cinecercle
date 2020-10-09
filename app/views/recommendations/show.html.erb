@@ -9,10 +9,6 @@
     <img src="<%= movie.poster %>" class="poster">
   </div>
   <div class="flex-grow reco-content" >
-    <div class="btn-underline-hover my-2 d-flex justify-content-start" id="add-reco">
-        <div><i class="fas fa-plus"></i></div>
-        <div class="btn-underline ml-2"><p>Ajouter au cercle</p></div>
-    </div>
     <%= link_to circle_recommendation_watchlists_path(@circle, @recommendation), method: :post do  %>
       <div class="btn-underline-hover my-2 d-flex justify-content-start ">
         <div><i class="fas fa-eye"></i></div>
@@ -30,7 +26,7 @@
   </div>
 </div>
 
-<div>
+<div class="reco-content">
   <h2>Autres commentaires</h2>
   <div class="d-flex justify-content-between">
     <div><p><%= @recommendation.reviews.count %> personnes ont vu et noté ce film</p></div>
@@ -43,6 +39,8 @@
     <%= render 'shared/review-card', review: review %>
   <% end %>
 </div>
+
+
 <div class="hidden overlay" id="modal-form">
   <div class="modale">
     <%= simple_form_for [@circle, @recommendation, @review] do |f| %>

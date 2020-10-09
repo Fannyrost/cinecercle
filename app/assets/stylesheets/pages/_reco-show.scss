@@ -13,14 +13,15 @@
 }
 
 
-.reco-content {
-  margin: auto 110px;
-}
+// .reco-content {
+//   margin: auto 110px;
+// }
 
 
 @media only screen and (min-device-width : 321px) and (max-device-width : 480px) {
   .reco-show {
     flex-direction: column;
+    height: auto;
 
   }
 
