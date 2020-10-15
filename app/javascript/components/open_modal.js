@@ -8,6 +8,7 @@ const openModal = () => {
 
   button.addEventListener('click', (event) => {
     console.log('je suis dans event listener');
+    event.preventDefault();
     const form = document.querySelector('#modal-form');
     form.classList.toggle('hidden');
 
