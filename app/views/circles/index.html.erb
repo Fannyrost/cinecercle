@@ -20,6 +20,7 @@
 
   <div class="circle-form hidden overlay" id="modal-form">
     <div class="modale">
+      <%= render 'shared/closing-modale' %>
       <%= simple_form_for [ @circle] do |f| %>
         <%= f.input :title,
                     required: true,

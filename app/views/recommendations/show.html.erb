@@ -43,6 +43,7 @@
 
 <div class="hidden overlay" id="modal-form">
   <div class="modale">
+    <%= render 'shared/closing-modale' %>
     <%= simple_form_for [@circle, @recommendation, @review] do |f| %>
       <%= f.input :rating, as: :radio_buttons, collection: ['1', '2', '3', '4', '5'], label: 'Note', class: 'form-field' %>
       <%= f.input :content, as: :text, label: 'Commentaires, Avis ...', class: 'form-field' %>
