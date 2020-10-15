@@ -1,0 +1,68 @@
+<div class="m-auto d-flex justify-content-center align-items-center pb-2">
+
+    <% if circle.memberships.size == 1 %>
+      <p>Invitez des amis à vous rejoindre dans le cercle et partagez ensemble vos meilleurs moments de cinéma</p>
+
+    <% elsif circle.memberships.size == 2 %>
+      <% one = nil %>
+      <% two = nil %>
+      <% circle.memberships.each do |membership| %>
+        <% membership.user == current_user ? one = membership.user : two = membership.user %>
+      <% end %>
+      <div>
+        <% if one.photo.attached?  %>
+          <%= cl_image_tag user.photo.key, class: "avatar-small add-two-avatars avatar-one"  %>
+        <% else %>
+          <%= image_tag "avatar-unknown.png", class: "avatar-small add-two-avatars avatar-one" %>
+        <% end %>
+
+        <% if two.photo.attached?  %>
+          <%= cl_image_tag user.photo.key, class: "avatar-small add-two-avatars avatar-two" %>
+        <% else %>
+          <%= image_tag "avatar-unknown.png", class: "avatar-small add-two-avatars avatar-two" %>
+        <% end %>
+      </div>
+      <div>
+        <p class="m-0"> <%= two.pseudo %> & vous partagez ce cercle </p>
+      </div>
+    <% else %>
+    <% m_one = Membership.where(circle_id: circle.id, user_id: current_user) %>
+    <% m_two = circle.memberships.first(3)[1] %>
+    <% m_three = circle.memberships.first(3)[2] %>
+    <% one = current_user %>
+    <% two = m_two.user %>
+    <% three = m_three.user %>
+    <div>
+      <% if one.photo.attached?  %>
+        <%= cl_image_tag user.photo.key, class: "avatar-small avatar-one"  %>
+      <% else %>
+        <%= image_tag "avatar-unknown.png", class: "avatar-small avatar-one" %>
+      <% end %>
+
+      <% if two.photo.attached?  %>
+        <%= cl_image_tag user.photo.key, class: "avatar-small avatar-two" %>
+      <% else %>
+        <%= image_tag "avatar-unknown.png", class: "avatar-small avatar-two" %>
+      <% end %>
+
+      <% if two.photo.attached?  %>
+        <%= cl_image_tag user.photo.key, class: "avatar-small avatar-three" %>
+      <% else %>
+        <%= image_tag "avatar-unknown.png", class: "avatar-small avatar-three" %>
+      <% end %>
+    </div>
+    <div>
+      <% size = circle.memberships.size - 3 %>
+      <% if size == 0 %>
+        <p class="m-0"> <%= two.pseudo %>, <%= three.pseudo %> et vous partagez ce cercle </p>
+      <% else %>
+        <p class="m-0"> <%= two.pseudo %>, <%= three.pseudo %>, vous et <%= size  %> autres personnes partagez ce cercle </p>
+      <% end %>
+    </div>
+    <% end %>
+
+
+
+
+
+</div>

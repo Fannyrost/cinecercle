@@ -1,5 +1,5 @@
 <% if user.photo.attached?  %>
-  <%= cl_image_tag user.photo.key, class: "avatar-small" %>
+  <%= cl_image_tag user.photo.key, class: "avatar-small"  %>
 <% else %>
   <%= image_tag "avatar-unknown.png", class: "avatar-small" %>
 <% end %>

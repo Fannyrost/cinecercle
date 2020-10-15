@@ -20,19 +20,16 @@
     <% end %>
   </div>
   <div class="d-flex flex-column align-items-center justify-content-center tab-content reco-tab">
-    <% user.memberships.each do |membership| %>
-      <% membership.reviews.each do |review| %>
-        <%= render 'shared/watchlist-card', reco: review.recommendation, movie: review.recommendation.movie  %>
-      <% end %>
-   <% end %>
-  </div>
-  <div class="d-flex flex-column align-items-center justify-content-center tab-content movies-seen-tab">
-    <% if user.memberships.size == 0 %>
-      <p>Nothing added yet !</p>
-    <% end %>
      <% user.memberships.each do |membership| %>
        <% membership.recommendations.each do |reco| %>
          <%= render 'shared/recommendations-card', membership: membership, reco: reco, movie: reco.movie  %>
+       <% end %>
+    <% end %>
+  </div>
+  <div class="d-flex flex-column align-items-center justify-content-center tab-content movies-seen-tab">
+     <% user.memberships.each do |membership| %>
+       <% membership.reviews.each do |review| %>
+         <%= render 'shared/watchlist-card', reco: review.recommendation, movie: review.recommendation.movie  %>
        <% end %>
     <% end %>
   </div>
