@@ -12,7 +12,7 @@ const movieSearch = () => {
     results.innerHTML = "";
     const input = document.querySelector('input').value;
 
-    fetch(`http://www.omdbapi.com/?s=${input}&apikey=${apiKey}`)
+    fetch(`https://www.omdbapi.com/?s=${input}&apikey=${apiKey}`)
     .then(response => response.json())
     .then((data) => {
       console.log(data);
