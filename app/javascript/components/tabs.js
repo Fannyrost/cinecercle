@@ -1,5 +1,4 @@
 const tabs = () => {
-  console.log('in tabs')
   const tabs      = document.querySelectorAll('.tab');
 
   tabs.forEach(tab => {

@@ -38,7 +38,6 @@ document.addEventListener('turbolinks:load', () => {
   movieShow();
 
 });
-  console.log('last before tabs');
   tabs();
   openModal();
 
