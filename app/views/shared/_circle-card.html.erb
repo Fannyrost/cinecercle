@@ -2,11 +2,14 @@
   <div class="circle-card d-flex flex-column align-items-center mx-4 my-4 d-flex align-items-center">
     <div class="d-flex flex-column justify-content-between h-100 my-2">
       <div class="mt-5"><h2><%= c.title %></h2></div>
+      <div class="d-flex justify-content-start align-items-end">
+        <%= render 'shared/avatar-small', user: c.user %>
       <% if c.user == current_user %>
-        <div><p><em> Créé par vous </em></p></div>
+        <p class="ml-3"><em> Créé par vous </em></p>
       <% else %>
-        <div><p><em> Créé par <%= c.user.pseudo %></em></p></div>
+        <p class="ml-3"><em> Créé par <%= c.user.pseudo %></em></p>
       <% end %>
+      </div>
       <div class="mb-5">
         <% memberships = Membership.where(circle_id: c.id) %>
         <% movies_count = 0 %>

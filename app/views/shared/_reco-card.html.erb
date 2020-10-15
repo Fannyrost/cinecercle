@@ -1,11 +1,11 @@
  <div class="reco-card mt-5">
 
-  <div class="d-flex justify-content-start align-items-center">
+  <div class="d-flex justify-content-start align-items-start">
     <div>
-      <%= reco.membership.user.profile_picture  %>
+      <%= render 'shared/avatar-small', user: reco.membership.user %>
     </div>
-    <div>
-      <h3>Recommended by <%= reco.membership.user.pseudo.capitalize %></h3>
+    <div class="ml-3">
+      <h3>Recommendé par <%= reco.membership.user.pseudo.capitalize %></h3>
       <%= render 'shared/stars', reco: reco %>
     </div>
   </div>

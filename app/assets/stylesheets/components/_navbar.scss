@@ -40,7 +40,7 @@
 }
 
 
-.nav-links {
+.nav-links-desktop {
   width:20%;
 
   h2 {
@@ -52,8 +52,20 @@
 
 @media only screen and (min-device-width : 321px) and (max-device-width : 480px) {
   .unlogged-navbar {
-
+  height: 70px;
   border-bottom: 1px solid $pinky;
   background: black;
+  }
+
+  .nav-links-desktop {
+    width:30%;
+    h2, a {
+      font-size: 15px;
+      flex-grow:2;
+    }
+  }
+
+  .logged-navbar {
+    height: 70px;
   }
 }

@@ -14,12 +14,4 @@ class User < ApplicationRecord
     self.memberships.each { |m| reco_count +=1 }
     reco_count
   end
-
-  def profile_picture
-    if photo.attached?
-      photo.key
-    else
-      "avatar-unknown.png"
-    end
-  end
 end
