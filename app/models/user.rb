@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :memberships
   has_many :circles, through: :memberships
   has_many :watchlists
+  has_one_attached :photo
 
   def reco_count
     reco_count = 0

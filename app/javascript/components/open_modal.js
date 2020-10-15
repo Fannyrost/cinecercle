@@ -1,7 +1,7 @@
 const openModal = () => {
 
   const button = document.querySelector('#open-modal');
-
+  console.log(button)
   if (button === undefined)
     return
   console.log('je suis dans openModal');

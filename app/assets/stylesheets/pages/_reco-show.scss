@@ -13,6 +13,47 @@
 }
 
 
-.reco-content {
-  margin: auto 110px;
+// .reco-content {
+//   margin: auto 110px;
+// }
+
+
+@media only screen and (min-device-width : 321px) and (max-device-width : 480px) {
+  .reco-show {
+    flex-direction: column;
+    height: auto;
+
+  }
+
+  .poster {
+    height: 50vh;
+    margin: 50px;
+  }
+
+  .reco-content {
+    margin: 0;
+    padding: 18px;
+
+    .margin-content{
+      margin: 0.5rem !important;
+    }
+  }
+
+  .modale-responsivness {
+    flex-direction : column;
+    .poster {
+      height: 30vh;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      width: 80%;
+      margin: auto;
+    }
+
+    .form-field {
+      width: 80%;
+      margin: auto;
+    }
+  }
 }

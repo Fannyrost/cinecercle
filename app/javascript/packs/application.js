@@ -29,14 +29,17 @@ require("channels")
 import { movieSearch} from '../components/movie_search';
 import { movieShow} from '../components/movie_show';
 import { openModal} from '../components/open_modal';
+import { tabs } from '../components/tabs';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   movieSearch();
   movieShow();
-});
-  openModal();
 
+});
+  console.log('last before tabs');
+  tabs();
+  openModal();
 
 
