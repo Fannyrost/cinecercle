@@ -14,4 +14,22 @@ class User < ApplicationRecord
     self.memberships.each { |m| reco_count +=1 }
     reco_count
   end
+
+  def average_ratings_of_reco
+    recommendations = []
+    rating = 0
+    count  = 0
+    self.memberships.each do |m|
+      m.recommendations.each { |r| recommendations << r }
+    end
+    recommendations.each do |reco|
+      reco.reviews.each do |review|
+        rating += review.rating
+        count  += 1
+      end
+    end
+    unless !count.nil?
+      rating / count
+    end
+  end
 end

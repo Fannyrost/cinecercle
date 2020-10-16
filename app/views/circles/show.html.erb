@@ -17,7 +17,7 @@
   <div class="borderbottom my-5">
     <h1 class="p-2"><%= @circle.title %></h1>
     <p class="p-2"><%= @circle.description %></p>
-    <%= render 'shared/members-avatars.html.erb', circle: @circle %>
+    <%= render 'shared/members-avatars.html.erb', model: @circle, array: @circle.memberships, text: "partagez ce cercle", empty_text: "Invitez des amis à vous rejoindre dans le cercle" %>
   </div>
   <div class="movies my-5 d-flex justify-content-around flex-wrap">
     <% @circle.memberships.each do |membership| %>

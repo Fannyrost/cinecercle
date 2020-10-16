@@ -1,20 +1,19 @@
 <div class="m-auto d-flex justify-content-center align-items-center pb-3">
-  <% m = circle.memberships %>
-  <% text = "partagez ce cercle" %>
-  <% if m.size == 1 %>
-    <p> Invitez des amis à vous rejoindre dans le cercle </p>
-  <% elsif m.size == 2 %>
+  <% if array.size <= 1 %>
+      <p> <%= empty_text %> </p>
+  <% elsif array.size == 2 %>
     <% one = nil %>
     <% two = nil %>
-    <% m.each do |membership| %>
-    <% membership.user == current_user ? two = membership.user : one = membership.user %>
+    <% array.each do |data| %>
+    <% data.user == current_user ? two = data.user : one = data.user %>
     <% end %>
     <%= render 'shared/two-avatars', one: one, two: two, text: text  %>
   <% else %>
-    <% one = circle.memberships.first(3)[2].user%>
-    <% two = circle.memberships.first(3)[1].user  %>
+    <% one = array.first(3)[2].user%>
+    <% two = array.first(3)[1].user  %>
     <% three =  current_user %>
-    <% size = m.size - 3 %>
+    <% size = array.size - 3 %>
     <%= render 'shared/more-avatars', one: one, two: two, three: three, size: size, text: text %>
   <% end %>
+
 </div>

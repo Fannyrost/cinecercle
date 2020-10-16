@@ -16,7 +16,9 @@
           <div class="btn-underline ml-2"><p>Ajouter à ma watchlist</p></div>
         </div>
       <% end %>
-      <%= render 'shared/btn-modal', fontawesome: "fas fa-check", title: 'Marquer comme vu' %>
+      <% unless @recommendation.membership.user == current_user %>
+        <%= render 'shared/btn-modal', fontawesome: "fas fa-check", title: 'Marquer comme vu' %>
+      <% end %>
     </div>
 
     <h1><%= movie.title %> (<%= movie.year %>)</h1>
@@ -28,19 +30,29 @@
   </div>
 </div>
 
-<div class="reco-content">
-  <h2>Autres commentaires</h2>
-  <div class="d-flex justify-content-between">
-    <div><p><%= @recommendation.reviews.count %> personnes ont vu et noté ce film</p></div>
-    <div>
-      <%# average_rating(@recommendation.reviews) %>
+<% if @recommendation.reviews.count >= 1 %>
+  <div class=" personnalized-container reco-content">
+    <div class="d-flex justify-content-between align-items-center">
+      <div><h2>Autres commentaires</h2></div>
+      <div class="d-flex flex-column align-items-center">
+        <%= render 'shared/stars', number: Review.average_rating(@recommendation) %>
+        <p class="m-0"><em>Note moyenne des membres</em></p>
+      </div>
+
+    </div>
+    <div class="d-flex justify-content-between">
+      <% array = [] %>
+        <% @recommendation.reviews.each { |r| array << r.membership} %>
+      <%= render 'shared/members-avatars.html.erb', model: @recommendation, array: array , text: "ont vu et noté ce film", empty_text: "", type: "comments" %>
+    </div>
+    <div class="d-flex justify-content-between align-items-center flex-wrap mb-5">
+      <% @recommendation.reviews.each do |review| %>
+        <%= render 'shared/review-card', review: review %>
+      <% end %>
     </div>
 
   </div>
-  <% @recommendation.reviews.each do |review| %>
-    <%= render 'shared/review-card', review: review %>
-  <% end %>
-</div>
+<% end %>
 
 
 <div class="hidden overlay" id="modal-form">

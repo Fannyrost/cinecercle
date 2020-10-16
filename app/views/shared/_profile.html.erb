@@ -6,5 +6,9 @@
     <h1 class="p-2 mt-5">Hello <%= user.pseudo.capitalize%> ! </h1>
       <div><p><i class="fas fa-users pink-font"></i> <%= user.memberships.count %> cercles de partage </p></div>
       <div><p><i class="fas fa-film pink-font"></i> <%= user.reco_count %> films recommandés</p></div>
+      <% av = user.average_ratings_of_reco  %>
+      <% unless av.nil? %>
+        <div><p><i class="fas fa-star pink-font"></i> <%= av %> note moyenne obtenue par les recommandations</p></div>
+      <% end %>
   </div>
 </div>

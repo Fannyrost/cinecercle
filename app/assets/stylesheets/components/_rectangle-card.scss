@@ -23,6 +23,23 @@
   }
 }
 
+
+.review-card {
+  height: 150px;
+  width: 300px;
+  background-color: $cream;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border-radius: 30px;
+  transition: transform 0.3s;
+  padding: 10px;
+  overflow: hidden;
+
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
 @media only screen and (min-device-width : 321px) and (max-width : 480px) {
   .rectangle-card {
     width: 250px;

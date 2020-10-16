@@ -1,4 +1,4 @@
- <div class="reco-card mt-5">
+<div class="reco-card mt-5">
   <div class="quote-b-l"><%= image_tag "quote-b-l.png", alt: "alttext" %></div>
   <div class="quote-t-r"><%= image_tag "quote-t-r.png", alt: "alttext" %></div>
   <div class="d-flex justify-content-start align-items-start">
@@ -7,9 +7,9 @@
     </div>
     <div class="ml-3">
       <h3>Recommandé par <%= reco.membership.user.pseudo.capitalize %></h3>
-      <%= render 'shared/stars', reco: reco %>
+      <%= render 'shared/stars', number: reco.rating %>
     </div>
   </div>
   <p>"<%= reco.review_content %>"</p>
 
- </div>
+</div>

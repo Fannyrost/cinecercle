@@ -8,11 +8,11 @@
         <div class="d-flex justify-content-between align-items-start">
            <div class="d-flex flex-column align-items-center">
              <p class="watchlist-content">Note de la recommandation</p>
-             <%= render 'shared/stars', reco: reco %>
+             <%= render 'shared/stars', number: reco.rating %>
            </div>
            <div class="d-flex flex-column align-items-center">
              <p class="watchlist-content">Note du cercle</p>
-             <%= render 'shared/stars', reco: reco %>
+             <%= render 'shared/stars', number: reco.rating %>
            </div>
         </div>
       </div>
