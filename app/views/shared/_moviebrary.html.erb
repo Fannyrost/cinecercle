@@ -13,7 +13,7 @@
 <div class="moviebrary">
   <div class="d-flex flex-column align-items-center justify-content-center tab-content watchlist-tab on">
     <% if user.watchlists.size == 0 %>
-      <p>Nothing added yet !</p>
+      <p>Vous n'avez pas encore de films dans votre watchlist.</p>
     <% end %>
     <% user.watchlists.each do |watchlist| %>
       <%= render 'shared/watchlist-card', movie: watchlist.recommendation.movie, reco: watchlist.recommendation  %>
