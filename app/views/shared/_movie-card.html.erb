@@ -1,16 +1,23 @@
 <%= link_to circle_recommendation_path(@circle, reco) do  %>
 
-  <div class="movie-card m-4 d-flex flex-column">
-    <div class=" movie-img" style="background-image: url('<%= movie.poster %>');"></div>
+  <div class="movie-card m-4 d-flex flex-column justify-content-between">
+    <div class=" movie-img">
+      <%= image_tag movie.poster, alt: "alttext" %>
+    </div>
     <div class="movie-card-content p-3">
-      <h2 class="m-auto"><%= movie.title %></h2>
+      <div class="d-flex justify-content-between">
+        <h2 class="mr-2"><%= movie.title %></h2>
+        <%= render 'shared/stars', reco: reco %>
+      </div>
 
-      <div class="d-flex justify-content-start align-items-center" style="width: 100%;">
+      <div class="d-flex justify-content-start align-items-center mt-2">
         <%= render 'shared/avatar-small', user: membership.user %>
-        <div class="ml-3">
-          <%= render 'shared/stars', reco: reco %>
-          <p>ajouté par <%= membership.user.pseudo.capitalize %></p>
+
+        <div class="d-flex flex-column justify-content-between align-items-start ml-3">
+          <p style="font-size: 12px;"><em> <%= reco.time_ago(reco.created_at) %></em></p>
+          <p> Ajouté par <%= membership.user.pseudo.capitalize%> </p>
         </div>
+
       </div>
     </div>
   </div>

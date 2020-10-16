@@ -1,35 +1,59 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="personnalized-container text-center">
+  <h1 class="my-5">Editer mon profil</h1>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
 
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: true,
+                  label:false,
+                  placeholder: "Email",
+                  input_html: { class: 'form-field' },
+                  autofocus: true %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
+      <%= f.input :pseudo,
+                  required: false,
+                  label:false,
+                  placeholder: "Nouveau pseudo",
+                  input_html: { class: 'form-field' },
+                  autofocus: true %>
+      <%= f.input :photo,
+                  as: :file,
+                  input_html: { class: 'form-field' },
+                  label: "Changer votre photo de profil",
+                  label_html: { class: 'cream-font' } %>
+      <%= f.input :current_password,
+                  label:false,
+                  placeholder: "Mot de passe actuel",
+                  hint: "Nous avons besoin de votre mot de passe actuel pour confirmer vos modifications",
+                  required: true,
+                  input_html: { autocomplete: "current-password", class: 'form-field' } %>
+      <%= f.input :password,
+                  hint: "Laisser le champs vide si vous ne souhaitez pas changer votre mot de passe",
+                  required: false,
+                  label:false,
+                  placeholder: "Nouveau mot de passe",
+                  input_html: { autocomplete: "new-password", class: 'form-field' } %>
+      <%= f.input :password_confirmation,
+                  required: false,
+                  label:false,
+                  placeholder: "Confirmer le mot de passe",
+                  input_html: { autocomplete: "new-password", class: 'form-field' } %>
 
-<h3>Cancel my account</h3>
+    </div>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <div class="form-actions">
+      <%= f.button :submit, "Valider", class: 'btn-pinky' %>
+    </div>
+  <% end %>
 
-<%= link_to "Back", :back %>
+  <p class="my-2">Insatisfait? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+  <%= link_to "Retour", :back, class: 'pink-font' %>
+</div>

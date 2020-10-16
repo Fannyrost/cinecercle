@@ -17,6 +17,7 @@
   <div class="borderbottom my-5">
     <h1 class="p-2"><%= @circle.title %></h1>
     <p class="p-2"><%= @circle.description %></p>
+    <%= render 'shared/members-avatars.html.erb', circle: @circle %>
   </div>
   <div class="movies my-5 d-flex justify-content-around flex-wrap">
     <% @circle.memberships.each do |membership| %>
@@ -25,21 +26,16 @@
         <%= render 'shared/movie-card', reco: reco, movie: movie, membership: membership  %>
       <% end %>
     <% end %>
-
   </div>
-
 
   <div class="hidden overlay" id="modal-form">
     <div class="modale">
+      <%= render 'shared/closing-modale' %>
       <%= simple_form_for [@circle, @membership] do |f| %>
-
       <%= f.association :user, label_method: :pseudo, value_method: :id, include_blank: false, label: "Sélectionnez l'utilisateur", class: 'form-field' %>
       <%= f.submit "OK", class: 'btn-pinky' %>
-
       <% end %>
     </div>
   </div>
-
-
 </div>
 

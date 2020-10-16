@@ -20,7 +20,6 @@ class MembershipsController < ApplicationController
     redirect_to circles_path
   end
 
-
   private
   def membership_params
     params.require(:membership).permit(:user_id)

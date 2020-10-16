@@ -2,11 +2,11 @@ const movieSearch = () => {
 
   const form = document.querySelector('#movie-search');
 
-  if (form === undefined)
-    return
   const apiKey = "ce8d3236";
   const results = document.querySelector('.movies')
 
+  if (form === undefined)
+    return;
   form.addEventListener('submit', event => {
     event.preventDefault();
     results.innerHTML = "";

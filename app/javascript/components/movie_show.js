@@ -1,7 +1,8 @@
 const movieShow = () => {
   sleep(10)
   const movies = document.querySelectorAll('.movie-card');
-
+  if (movies === undefined)
+    return
       movies.forEach((movie) => {
         movie.addEventListener('click', (event) => {
           event.preventDefault();
