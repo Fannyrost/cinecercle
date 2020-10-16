@@ -1,0 +1,26 @@
+<div>
+  <% if one.photo.attached? %>
+  <%= cl_image_tag user.photo.key, class: "avatar-small avatar-one" %>
+  <% else %>
+  <%= image_tag "avatar-unknown.png", class: "avatar-small avatar-one" %>
+  <% end %>
+
+  <% if two.photo.attached? %>
+  <%= cl_image_tag user.photo.key, class: "avatar-small avatar-two" %>
+  <% else %>
+  <%= image_tag "avatar-unknown.png", class: "avatar-small avatar-two" %>
+  <% end %>
+
+  <% if two.photo.attached? %>
+  <%= cl_image_tag user.photo.key, class: "avatar-small avatar-three" %>
+  <% else %>
+  <%= image_tag "avatar-unknown.png", class: "avatar-small avatar-three" %>
+  <% end %>
+</div>
+<div>
+  <% if size == 0 %>
+  <p class="m-0"> <%= two.pseudo %> , <%= three.pseudo %>  et vous <%= text %></p>
+  <% else %>
+  <p class="m-0"> <%= two.pseudo %> , <%= three.pseudo %> , vous et <%= size %>  autres personnes <%= text %> </p>
+  <% end %>
+</div>
