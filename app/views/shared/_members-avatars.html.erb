@@ -7,13 +7,13 @@
     <% one = nil %>
     <% two = nil %>
     <% m.each do |membership| %>
-    <% membership.user == current_user ? one = membership.user : two = membership.user %>
+    <% membership.user == current_user ? two = membership.user : one = membership.user %>
     <% end %>
     <%= render 'shared/two-avatars', one: one, two: two, text: text  %>
   <% else %>
-    <% one = current_user%>
+    <% one = circle.memberships.first(3)[2].user%>
     <% two = circle.memberships.first(3)[1].user  %>
-    <% three = circle.memberships.first(3)[2].user  %>
+    <% three =  current_user %>
     <% size = m.size - 3 %>
     <%= render 'shared/more-avatars', one: one, two: two, three: three, size: size, text: text %>
   <% end %>

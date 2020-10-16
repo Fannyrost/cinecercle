@@ -1,15 +1,15 @@
 <div>
   <% if one.photo.attached?  %>
-      <%= cl_image_tag user.photo.key, class: "avatar-small add-two-avatars avatar-one" %>
+      <%= cl_image_tag one.photo.key, class: "avatar-small add-two-avatars avatar-one" %>
   <% else %>
       <%= image_tag "avatar-unknown.png", class: "avatar-small add-two-avatars avatar-one" %>
   <% end %>
   <% if two.photo.attached?  %>
-      <%= cl_image_tag user.photo.key, class: "avatar-small add-two-avatars avatar-two" %>
+      <%= cl_image_tag two.photo.key, class: "avatar-small add-two-avatars avatar-two" %>
   <% else %>
       <%= image_tag "avatar-unknown.png", class: "avatar-small add-two-avatars avatar-two" %>
   <% end %>
 </div>
 <div>
-  <p class="m-0"> <%= two.pseudo %> et vous <%= text %> </p>
+  <p class="m-0"> <%= one.pseudo %> et vous <%= text %> </p>
 </div>
