@@ -1,7 +1,6 @@
 class MembershipsController < ApplicationController
 
   def create
-    # raise
     @membership = Membership.new(membership_params)
     @circle = Circle.find(params[:circle_id])
     @membership.circle = @circle

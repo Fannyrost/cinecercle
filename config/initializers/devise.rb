@@ -311,4 +311,10 @@ Devise.setup do |config|
 
   # added by Fanny, to allow pseudo input
   config.scoped_views = true
+
+  #added by Fanny, to alow facebook login
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], scope: 'email', secure_image_url: true, image_size: 'large'
+  #display: 'popup',
+
+
 end
