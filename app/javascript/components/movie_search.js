@@ -5,8 +5,9 @@ const movieSearch = () => {
   const apiKey = "ce8d3236";
   const results = document.querySelector('.movies')
 
-  if (form === undefined)
-    return;
+  if (form != undefined || null) {
+
+
   form.addEventListener('submit', event => {
     event.preventDefault();
     results.innerHTML = "";
@@ -50,7 +51,7 @@ const movieSearch = () => {
       })
     });
 
-  };
+  }};
 
 
 export { movieSearch }

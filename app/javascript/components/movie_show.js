@@ -1,5 +1,4 @@
 const movieShow = () => {
-  sleep(10)
   const movies = document.querySelectorAll('.movie-card');
   if (movies === undefined)
     return

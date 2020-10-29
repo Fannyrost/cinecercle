@@ -25,6 +25,7 @@ gem 'json'
 gem 'open-uri'
 gem 'rest-client'
 gem 'breadcrumbs_on_rails', '~> 4.0'
+gem 'omniauth-facebook'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
